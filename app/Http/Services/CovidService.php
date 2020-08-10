@@ -45,10 +45,32 @@ class CovidService
         $response = $this->getData(null, $continent);
         $data = collect($response['response']);
         $result = $data->groupBy('continent')
-            ->map(function ($value, $key) {
+            ->map(function ($countries, $key) {
                 $object = new \stdClass();
                 $object->continent = $key;
-                $object->countriesCount = count($value);
+                $object->countriesCount = count($countries);
+
+                $cases = [];
+                $cases['new'] = 0;
+                $cases['active'] = 0;
+                $cases['critical'] = 0;
+                $cases['recovered'] = 0;
+                $cases['deaths'] = 0;
+
+                foreach ($countries as $country) {
+                    $cases['new'] += $country['cases']['new'];
+                    $cases['active'] += $country['cases']['active'];
+                    $cases['critical'] += $country['cases']['critical'];
+                    $cases['recovered'] += $country['cases']['recovered'];
+                    $cases['deaths'] += $country['deaths']['total'];
+                }
+
+                $object->cases_new = $cases['new'];
+                $object->cases_active = $cases['active'];
+                $object->cases_critical = $cases['critical'];
+                $object->cases_recovered = $cases['recovered'];
+                $object->cases_deaths = $cases['deaths'];
+
                 return $object;
             })
             ->sort()
