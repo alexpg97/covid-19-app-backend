@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501e1b71-0907-493e-abde-3c4fecdb9ad9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/covid19-app-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/covid19-app-backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Services/CovidService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/CovidService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +129,11 @@
       <path value="$PROJECT_DIR$/vendor/swagger-api/swagger-ui" />
       <path value="$PROJECT_DIR$/vendor/zircote/swagger-php" />
       <path value="$PROJECT_DIR$/vendor/darkaonline/l5-swagger" />
+      <path value="$PROJECT_DIR$/vendor/deployer/recipes" />
+      <path value="$PROJECT_DIR$/vendor/deployer/phar-update" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/deployer/deployer" />
+      <path value="$PROJECT_DIR$/vendor/lorisleiva/laravel-deployer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fqYefLmRLhH7TDvc7B8BwCFcx8" />
@@ -170,7 +178,8 @@
       <option name="presentableId" value="Default" />
       <updated>1596947187358</updated>
       <workItem from="1596947188459" duration="8776000" />
-      <workItem from="1597014300409" duration="6411000" />
+      <workItem from="1597014300409" duration="7058000" />
+      <workItem from="1597083423581" duration="6647000" />
     </task>
     <servers />
   </component>
@@ -202,22 +211,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="771" y="333" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1596949021341" />
-    <state width="1878" height="276" key="GridCell.Tab.0.bottom" timestamp="1597026483909">
+    <state width="1878" height="276" key="GridCell.Tab.0.bottom" timestamp="1597041691948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597026483909" />
-    <state width="1878" height="276" key="GridCell.Tab.0.center" timestamp="1597026483906">
+    <state width="1878" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597041691948" />
+    <state width="1878" height="276" key="GridCell.Tab.0.center" timestamp="1597041691948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597026483906" />
-    <state width="1878" height="276" key="GridCell.Tab.0.left" timestamp="1597026483905">
+    <state width="1878" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597041691948" />
+    <state width="1878" height="276" key="GridCell.Tab.0.left" timestamp="1597041691947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597026483905" />
-    <state width="1878" height="276" key="GridCell.Tab.0.right" timestamp="1597026483908">
+    <state width="1878" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597041691947" />
+    <state width="1878" height="276" key="GridCell.Tab.0.right" timestamp="1597041691948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597026483908" />
+    <state width="1878" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597041691948" />
     <state x="1052" y="248" width="767" height="541" key="NewPhpClassDialog" timestamp="1596947505143">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
