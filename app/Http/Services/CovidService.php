@@ -30,7 +30,7 @@ class CovidService
             ->map(function ($value, $key) {
                 $object = new \stdClass();
                 $object->continent = $key;
-                $object->countries = $value;
+                $object->countries = collect($value)->sortBy('country')->toArray();
                 return $object;
             })
             ->sort()
@@ -46,7 +46,10 @@ class CovidService
         $data = collect($response['response']);
         $result = $data->groupBy('continent')
             ->map(function ($value, $key) {
-                return $key;
+                $object = new \stdClass();
+                $object->continent = $key;
+                $object->countriesCount = count($value);
+                return $object;
             })
             ->sort()
             ->flatten()
@@ -81,31 +84,37 @@ class CovidService
 
         if ($debug) {
             if ($country != null)
-                return $this->getTestData('country', $country);
-            if ($continent != null)
-                return $this->getTestData('continent', $continent);
-            return $this->getTestData();
-        }
+                $result = $this->getTestData('country', $country);
+            else
+                if ($continent != null)
+                    $result = $this->getTestData('continent', $continent);
+                else
+                    $result = $this->getTestData();
+        } else {
+            try {
+                $params = [];
+                if ($country) {
+                    $params['country'] = $country;
+                }
+                if ($continent) {
+                    $params['$continent'] = $continent;
+                }
 
-        try {
-            $country = $country ? $country : null;
-
-            $params = [];
-            if ($country) {
-                $params['country'] = $country;
+                $result = $this->httpClient
+                    ->get($this->baseUrl . '/statistics', $params)
+                    ->json();
+            } catch (\Exception $exception) {
+                // dd($exception);
+                Log::info($exception);
+                throw new HttpClientException($exception);
             }
-            if ($continent) {
-                $params['$continent'] = $continent;
-            }
-
-            return $this->httpClient
-                ->get($this->baseUrl . '/statistics', $params)
-                ->json();
-        } catch (\Exception $exception) {
-            // dd($exception);
-            Log::info($exception);
-            throw new HttpClientException($exception);
         }
+        $result = [
+            'results' => $result['results'],
+            'response' => $result['response'],
+        ];
+
+        return $result;
     }
 
     public function getTestData($filterName = null, $filterValue = null)
@@ -116,9 +125,6 @@ class CovidService
             $jsonData['response'] = collect($jsonData['response'])->where($filterName, $filterValue)->toArray();
             $jsonData['results'] = count($jsonData['response']);
         }
-        return [
-            'results' => $jsonData['results'],
-            'response' => $jsonData['response'],
-        ];
+        return $jsonData;
     }
 }
