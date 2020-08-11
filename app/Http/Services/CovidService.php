@@ -86,7 +86,7 @@ class CovidService
 
         if (count($result) == 0)
             return null;
-        return $result[0]->countries;
+        return $result[0];
     }
 
     public function getByCountry($country)
@@ -102,9 +102,10 @@ class CovidService
 
     public function getData($country = null, $continent = null)
     {
-        $debug = true;
+        $debug = false;
 
         if ($debug) {
+            // Offline mode
             if ($country != null)
                 $result = $this->getTestData('country', $country);
             else
@@ -115,16 +116,15 @@ class CovidService
         } else {
             try {
                 $params = [];
-                if ($country) {
+                if ($country != null) {
                     $params['country'] = $country;
                 }
-                if ($continent) {
-                    $params['$continent'] = $continent;
-                }
-
                 $result = $this->httpClient
                     ->get($this->baseUrl . '/statistics', $params)
                     ->json();
+                if ($continent != null) {
+                    $result['response'] = collect($result['response'])->where('continent',$continent)->toArray();
+                }
             } catch (\Exception $exception) {
                 // dd($exception);
                 Log::info($exception);
@@ -134,6 +134,7 @@ class CovidService
         $result = [
             'results' => $result['results'],
             'response' => $result['response'],
+            'errors' => $result['errors'],
         ];
 
         return $result;

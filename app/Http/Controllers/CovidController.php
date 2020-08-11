@@ -68,6 +68,15 @@ class CovidController extends Controller
      *      tags={"Covid"},
      *      summary="Get countries info per continent",
      *      description="",
+     *      @OA\Parameter(
+     *          name="continent",
+     *          description="Continent name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
@@ -82,7 +91,7 @@ class CovidController extends Controller
         if ($result) {
             return response()->json($result, 200);
         }
-        return response()->json(['message' => 'Could not find the continent, please try again'], Response::HTTP_BAD_REQUEST);
+        return response()->json(['message' => "Could not find the continent '{$continent}', please try again"], Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -115,6 +124,6 @@ class CovidController extends Controller
         if ($result) {
             return response()->json($result, 200);
         }
-        return response()->json(['message' => 'Could not find the country, please try again'], Response::HTTP_BAD_REQUEST);
+        return response()->json(['message' => "Could not find the country '{$country}', please try again"], Response::HTTP_BAD_REQUEST);
     }
 }

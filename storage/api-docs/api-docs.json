@@ -72,6 +72,17 @@
                 "summary": "Get countries info per continent",
                 "description": "",
                 "operationId": "getPerContinent",
+                "parameters": [
+                    {
+                        "name": "continent",
+                        "in": "path",
+                        "description": "Continent name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful operation",
