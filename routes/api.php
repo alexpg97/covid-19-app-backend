@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('covid')->group(function () {
+    Route::get('', 'CovidController@getInfo');
+    Route::get('getContinents', 'CovidController@getContinents');
+    Route::get('perContinent/{continent}', 'CovidController@getPerContinent');
+    Route::get('perCountry/{country}', 'CovidController@getByCountry');
+});

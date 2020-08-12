@@ -2,6 +2,9 @@
 
 return [
 
+    // RAPID API KEY
+    'rapid_api_key' => env('RAPID_API_KEY', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -39,7 +42,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
