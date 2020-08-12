@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="501e1b71-0907-493e-abde-3c4fecdb9ad9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/deploy.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/deploy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +195,7 @@
       <workItem from="1596947188459" duration="8776000" />
       <workItem from="1597014300409" duration="7058000" />
       <workItem from="1597083423581" duration="11145000" />
+      <workItem from="1597213019358" duration="1996000" />
     </task>
     <servers />
   </component>
@@ -203,6 +203,15 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -250,6 +259,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1052" y="248" width="767" height="541" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596947505143" />
+    <state x="422" y="136" width="586" height="585" key="RollbackChangesDialog" timestamp="1597205947334">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="422" y="136" width="586" height="585" key="RollbackChangesDialog/0.0.1440.860@0.0.1440.860" timestamp="1597205947334" />
     <state x="656" y="276" width="608" height="488" key="find.popup" timestamp="1596950414646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
